@@ -2,6 +2,7 @@ name: Daily Telegram Alert
 
 on:
   schedule:
+    - cron: '30 3 * * *'
     - cron: '0 10 * * *'
   workflow_dispatch:
 
