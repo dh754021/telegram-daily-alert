@@ -24,4 +24,5 @@ jobs:
       - name: Send Telegram message
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          BOT_TOKEN_2: ${{ secrets.BOT_TOKEN_2 }}
         run: python send_alert.py
