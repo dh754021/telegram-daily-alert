@@ -1,8 +1,19 @@
 import requests
 import os
 
-TOKEN = os.environ['BOT_TOKEN']
-CHAT_ID = '-1002473651392'
+alerts = [
+    {
+        "token": os.environ['BOT_TOKEN'],
+        "chat_id": "-1002473651392",
+        "text": "❗️콜,리스트 정리 해야합니다❗️"
+    },
+    {
+        "token": os.environ['BOT_TOKEN_2'],
+        "chat_id": "-1002964487598",
+        "text": "❗️콜,리스트 정리 해야합니다❗️"
+    },
+]
 
-url = f'https://api.telegram.org/bot{TOKEN}/sendMessage'
-requests.post(url, data={'chat_id': CHAT_ID, 'text': '❗️콜,리스트 정리 해야합니다❗️'})
+for a in alerts:
+    url = f"https://api.telegram.org/bot{a['token']}/sendMessage"
+    requests.post(url, data={"chat_id": a["chat_id"], "text": a["text"]})
