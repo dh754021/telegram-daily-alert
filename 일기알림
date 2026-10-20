@@ -1,0 +1,8 @@
+import requests
+import os
+
+TOKEN = os.environ['BOT_TOKEN_3']
+CHAT_ID = '새_그룹_chat_id'
+
+url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
+requests.post(url, data={"chat_id": CHAT_ID, "text": "오늘 하루는 어땠나요?"})
