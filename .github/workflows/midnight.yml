@@ -1,0 +1,26 @@
+name: Midnight Telegram Message
+
+on:
+  schedule:
+    - cron: '0 15 * * *'   # 한국시간 00:00
+  workflow_dispatch:
+
+jobs:
+  send-message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Send Telegram message
+        env:
+          BOT_TOKEN_3: ${{ secrets.BOT_TOKEN_3 }}
+        run: python send_midnight.py
