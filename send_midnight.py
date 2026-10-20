@@ -9,6 +9,6 @@ url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
 response = requests.post(url, data={
     "chat_id": CHAT_ID,
     "message_thread_id": THREAD_ID,
-    "text": "오늘 하루는 어땠나요?"
+    "text": "🍀오늘 하루는 어땠나요?🍀"
 })
 print(response.text)
