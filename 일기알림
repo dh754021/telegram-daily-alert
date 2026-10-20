@@ -2,12 +2,14 @@ import requests
 import os
 
 TOKEN = os.environ['BOT_TOKEN_3']
-CHAT_ID = '새_그룹_chat_id'
-THREAD_ID = '신앙일기_thread_id'
+CHAT_ID = '-1004357701385'
+THREAD_ID = '2'
 
 url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
-requests.post(url, data={
-    "chat_id": -1004357701385,
-    "message_thread_id": 2,
+response = requests.post(url, data={
+    "chat_id": CHAT_ID,
+    "message_thread_id": THREAD_ID,
     "text": "오늘 하루는 어땠나요?"
+})
+print(response.text)
 })
