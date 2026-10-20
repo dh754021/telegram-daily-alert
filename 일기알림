@@ -7,7 +7,7 @@ THREAD_ID = '신앙일기_thread_id'
 
 url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
 requests.post(url, data={
-    "chat_id": CHAT_ID,
-    "message_thread_id": THREAD_ID,
+    "chat_id": -1004357701385,
+    "message_thread_id": 2,
     "text": "오늘 하루는 어땠나요?"
 })
